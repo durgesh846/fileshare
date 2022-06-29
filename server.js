@@ -2,10 +2,17 @@
 const express=require('express');
 const app =express();
 const path=require('path');
+const cors=require('cors');
 
+// Cors
+
+const corsOptions={
+  origin:'*'
+}
 
 const PORT=process.env.PORT || 3000;
 app.use(express.static('public'))
+app.use(cors(corsOptions))
 app.use(express.json());
 app.listen(PORT,()=>{
     console.log(`Listening on port ${PORT}`);
@@ -29,3 +36,7 @@ app.listen(PORT,()=>{
   // Template engine
   app.set('views',path.join(__dirname,'/views'));
   app.set('view engine','ejs');
+
+
+
+  
