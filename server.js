@@ -26,8 +26,6 @@ app.listen(PORT,()=>{
   // database ko server se connect krne ke liye
   const connectDB=require('./config/db');
   connectDB();
-
-
   // Routes
   app.use('/api/files',require('./routes/files'));
   app.use('/files',require('./routes/show'));
